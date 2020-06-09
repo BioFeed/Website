@@ -1,0 +1,277 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
+	background: #000;
+	overflow-x: hidden;
+	color: white;
+}
+
+* {
+	z-index: 0;
+	overflow-wrap: break-word;
+}
+
+h1 {
+	font-size: 73px;
+	font-weight: 600;
+	line-height: 88px;
+	letter-spacing: -0.002em;
+}
+
+h2 {
+	margin-top: -24px;
+	font-size: 44px;
+	font-weight: 400;
+	line-height: 53px;
+	letter-spacing: -0.0275em;
+	text-align: center;
+}
+
+p {
+	font-size: 32px;
+	font-style: normal;
+	font-synthesis: none;
+	font-weight: 600;
+	height: 168px;
+	letter-spacing: 0.2160000056028366px;
+	line-height: 1.125;
+	margin: 29px 0 0;
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	background: rgba(0, 0, 0, 0.75);
+	-webkit-backdrop-filter: saturate(180%) blur(20px);
+	backdrop-filter: saturate(180%) blur(20px);
+	z-index: 10;
+
+	.toggle {
+		display: none;
+	}
+
+	a.item {
+		color: white;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		font-size: 18px;
+		text-align: center;
+		width: 175px;
+		height: 75px;
+		line-height: 75px;
+	}
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 100vh;
+	min-height: 700px;
+	width: 100vw;
+
+	* {
+		animation: appear 1500ms forwards;
+	}
+
+	.left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 50vw;
+		min-width: 500px;
+
+		.logo {
+			width: 300px;
+			height: 141.6px;
+			background: url("../img/Inline_logo.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h1 {
+			font-size: 64px;
+			max-width: 800px;
+			color: white;
+			text-align: center;
+			margin: 25px 0 0;
+		}
+	}
+
+	.plant {
+		width: 463px;
+		height: 463px;
+		background: url("../img/plant_header.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+article {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+
+	section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap-reverse;
+	}
+
+	.description {
+		max-width: 800px;
+		text-align: center;
+	}
+
+	hr {
+		margin-top: 50px;
+		width: 800px;
+		max-width: 90vw;
+		background: white;
+	}
+
+	.kit {
+		.right {
+			max-width: 700px;
+			text-align: justify;
+		}
+	}
+	.plants {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.plant {
+			width: 200px;
+			height: auto;
+			margin: 20px;
+			h3 {
+				font-size: 36px;
+				font-weight: 600;
+				line-height: 40px;
+				letter-spacing: -0.002em;
+			}
+			p {
+				font-size: 18px;
+				text-align: left;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+footer {
+	width: 800px;
+	max-width: 90vw;
+	height: 100px;
+	border-top: 3px solid white;
+	margin: 0 auto;
+	margin-top: 100px;
+	p {
+		text-align: center;
+		font-size: 18px;
+	}
+}
+@media (max-width: 800px) {
+	nav {
+		min-height: 75px;
+		height: auto;
+		flex-direction: column;
+
+		a.item {
+			transition: all 500ms ease-in-out;
+			display: none;
+		}
+
+		&.active {
+			a.item {
+				display: block;
+			}
+		}
+
+		.toggle {
+			display: block;
+			cursor: pointer;
+			position: fixed;
+			left: 10px;
+			top: 10px;
+			width: 55px;
+			height: 55px;
+			font-size: 27.5px;
+			text-align: center;
+			line-height: 55px;
+		}
+	}
+
+	header {
+		margin-top: 75px;
+
+		.left {
+			.logo {
+				width: calc(300px / 1.5);
+				height: calc(141.6px / 1.5);
+			}
+
+			h1 {
+				width: 90vw;
+				font-size: 36px;
+				line-height: 1.125;
+			}
+		}
+	}
+
+	article {
+		.kit {
+			canvas {
+				z-index: -10;
+			}
+
+			.right {
+				min-width: 0;
+
+				p {
+					width: 90vw;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+@keyframes appear {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+}
+
+::-webkit-scrollbar {
+	background-color: transparent;
+}

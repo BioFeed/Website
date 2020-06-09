@@ -1,0 +1,6 @@
+markdown: kramdown
+highlighter: rouge
+
+permalink: pretty
+include:
+  - _redirects
