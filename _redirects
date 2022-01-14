@@ -1,0 +1,4 @@
+https://biofeed.netlify.com/* https://www.bio-feed.org/:splat 301!
+https://biofeed.netlify.app/* https://www.bio-feed.org/:splat 301!
+http://biofeed.netlify.com/* https://www.bio-feed.org/:splat 301!
+http://biofeed.netlify.app/* https://www.bio-feed.org/:splat 301!
