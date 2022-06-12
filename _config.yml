@@ -4,3 +4,4 @@ highlighter: rouge
 permalink: pretty
 include:
   - _redirects
+  - _headers
